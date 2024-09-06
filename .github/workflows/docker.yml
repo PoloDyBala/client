@@ -3,7 +3,7 @@ name: Docker
 on:
   push:
     branches:
-      - main
+      - test
     tags:
       - v*
 
@@ -78,7 +78,7 @@ jobs:
             GITVERSION=git-${{ steps.vars.outputs.git_revision }}
             VERSION=${{ steps.get_version.outputs.VERSION }}
           tags: |
-            dragonflyoss/client:${{ steps.get_version.outputs.VERSION }}
+            polodybala/client:${{ steps.get_version.outputs.VERSION }}
             ghcr.io/${{ env.IMAGE_REPOSITORY }}:${{ steps.get_version.outputs.VERSION }}
           push: true
           cache-from: type=local,src=/tmp/.buildx-cache
@@ -159,7 +159,7 @@ jobs:
             GITVERSION=git-${{ steps.vars.outputs.git_revision }}
             VERSION=${{ steps.get_version.outputs.VERSION }}
           tags: |
-            dragonflyoss/dfinit:${{ steps.get_version.outputs.VERSION }}
+            polodybala/dfinit:${{ steps.get_version.outputs.VERSION }}
             ghcr.io/${{ env.IMAGE_REPOSITORY }}/dfinit:${{ steps.get_version.outputs.VERSION }}
           push: true
           cache-from: type=local,src=/tmp/.buildx-cache
