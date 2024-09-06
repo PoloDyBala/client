@@ -27,6 +27,7 @@ jobs:
           fi
           echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
 
+
       - name: Get Git Revision
         id: vars
         shell: bash
